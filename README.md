@@ -2,11 +2,17 @@
 
 O objetivo do trabalho é desenvolver uma aplicação cliente/servidor para troca de mensagens 
 instantâneas, utilizando a biblioteca de programação socket na linguagem Python, versão 3.6, ou superior.
+
 Os objetivos específicos do trabalho são:
+
 ◦ Familiarizar-se com a programação utilizando a API socket.
+
 ◦ Enviar e receber dados em uma aplicação que utiliza a arquitetura Cliente/Servidor.
+
 ◦ Entender o conceito de protocolos
+
 ◦ Entender o funcionamento de aplicações concorrentes
+
 
 1.3 Descrição do trabalho
 Neste trabalho você será desafiado a desenvolver uma aplicação distribuída chamada MeuMensageiro,
