@@ -48,7 +48,7 @@ def destinatario(mensagem):
 	
 	dest = mensagem.split()
 	dest= dest[0].split('@')
-	print(dest[1])
+	
 	return(dest[1])
 	
 # Funcao de recepcao e desempacotamento da mensagem
@@ -74,9 +74,12 @@ def conectado(con, cliente, informacao_usuario,arquivo_usuario_sistema):
 		#lista.append(msg.decode())
 		
 		dest=destinatario(msg.decode())
-		verifica_usuario(dest,arquivo_usuario_sistema)
-		print('cheguei aq')
-		#dict_mensagem = armazena_mensagem(informacao_usuario,lista)
+		if verifica_usuario(dest,arquivo_usuario_sistema):
+			print('entrou')
+		else:
+			print("Destinatário não existe na base de usuário. Desconectando cliente")
+			_thread.exit()
+			#dict_mensagem = armazena_mensagem(informacao_usuario,lista)
 		#escreve_aquivo(informacao_usuario,dict_mensagem)
 		print(cliente, ": ", msg.decode())
 		
