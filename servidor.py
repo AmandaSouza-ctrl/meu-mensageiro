@@ -75,7 +75,9 @@ def conectado(con, cliente, informacao_usuario,arquivo_usuario_sistema):
 		
 		dest=destinatario(msg.decode())
 		if verifica_usuario(dest,arquivo_usuario_sistema):
-			print('entrou')
+			print('algo')
+			dict_mensagem = armazena_mensagem(informacao_usuario,lista)
+			#envia mensagem uma por vez e finaliza com o "f" 
 		else:
 			print("Destinatário não existe na base de usuário. Desconectando cliente")
 			_thread.exit()
@@ -104,7 +106,7 @@ while True:
 	#	 break
 	
 	informacao_usuario=str(json.loads(informacao_usuario))
-	print("informacao: ", informacao_usuario)
+	#print("informacao: ", informacao_usuario)
 	if verifica_usuario (informacao_usuario,arquivo_usuario_sistema):
 		_thread.start_new_thread(conectado, tuple([con,cliente,informacao_usuario,arquivo_usuario_sistema])) #chama o conectado
 	else:
